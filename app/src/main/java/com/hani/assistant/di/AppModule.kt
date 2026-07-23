@@ -89,9 +89,4 @@ object AppModule {
         return AppRepository(appDatabase, preferenceDao, conversationDao)
     }
 
-    @Provides
-    @Singleton
-
-    @Provides
-    @Singleton
 }
