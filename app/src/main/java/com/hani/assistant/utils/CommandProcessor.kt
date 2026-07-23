@@ -147,8 +147,7 @@ class CommandProcessor @Inject constructor(
 
         // === Notifications ===
         if (lower.contains("notifications")) {
-            val count = NotificationRepository.getNotificationCount(context)
-            return "You have $count notifications. Open the notification panel to see them."
+            return "Notification feature is temporarily unavailable."
         }
 
         // === Search ===
