@@ -30,9 +30,9 @@ class AppRepository @Inject constructor(
         ))
     }
 
-    fun getRecentConversations(): Flow<List<ConversationEntity>> = conversationDao.getRecentConversations()
+    suspend fun getAll(): List<ConversationEntity> = conversationDao.getAll()
 
-    suspend fun clearConversations() = conversationDao.clearAll()
+    suspend fun clearConversations() = conversationDao.deleteAll()
 
     // Initial setup
     suspend fun initializePreferences() {

@@ -127,7 +127,7 @@ class FloatingOverlayService : Service() {
         // Observe view model state changes
         lifecycleScope.launch {
             overlayViewModel.state.collect { state ->
-                updateState(state)
+                setState(state)
             }
         }
 

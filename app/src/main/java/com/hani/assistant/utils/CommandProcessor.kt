@@ -44,7 +44,7 @@ class CommandProcessor @Inject constructor(
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                 context.startActivity(intent)
                 return "Calling ${contact.name}"
-            } else if (nameOrNumber.matches(Regex("^[0-9+\-]+$"))) {
+            } else if (nameOrNumber.matches(Regex("^[0-9+-]+$"))) {
                 // Direct number
                 val intent = Intent(Intent.ACTION_CALL, Uri.parse("tel:$nameOrNumber"))
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)

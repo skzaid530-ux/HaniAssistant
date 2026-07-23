@@ -16,6 +16,7 @@ import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.cancel
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -94,7 +95,7 @@ class AssistantOrchestrator @Inject constructor(
                 }
             } else {
                 // Not a direct command, use AI
-                val history = appRepository.getRecentConversations().firstOrNull() ?: emptyList()
+                val history = appRepository.getAll()
                 val chatHistory = history.map { Pair(it.userMessage, it.botResponse) }
                 val result = openAiChatService.getChatResponse(command, chatHistory)
                 result.onSuccess { reply ->

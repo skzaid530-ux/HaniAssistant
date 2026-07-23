@@ -33,8 +33,17 @@ class OpenAiChatService @Inject constructor(
 
                 val request = ChatRequest(messages = messages)
                 val auth = "Bearer ${BuildConfig.OPENAI_API_KEY}"
-                val response = api.getChatCompletion(auth, request)
-                val content = response.choices.firstOrNull()?.message?.content ?: "I'm not sure how to respond."
+
+                val response = api.getChatCompletion(auth, request).execute()
+
+                if (!response.isSuccessful) {
+                    throw HttpException(response)
+                }
+
+                val body = response.body()
+                val content = body?.choices?.firstOrNull()?.message?.content
+                    ?: "I'm not sure how to respond."
+
                 Result.success(content)
             } catch (e: HttpException) {
                 Result.failure(Exception("API error: ${e.message()}"))
