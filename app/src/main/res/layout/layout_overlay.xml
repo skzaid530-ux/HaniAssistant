@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@android:color/transparent">
+
+    <ImageView
+        android:id="@+id/overlay_image"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/hani_avatar"
+        android:contentDescription="Hani" />
+
+    <TextView
+        android:id="@+id/overlay_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Idle"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"
+        android:background="#88000000"
+        android:padding="4dp 8dp"
+        android:layout_marginTop="4dp"
+        android:maxWidth="120dp"
+        android:ellipsize="end"
+        android:singleLine="true" />
+</LinearLayout>

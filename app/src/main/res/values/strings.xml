@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Hani AI</string>
+    <string name="permission_rationale">
+        We need permissions to assist you.
+    </string>
+</resources>

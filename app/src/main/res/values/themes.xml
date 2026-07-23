@@ -1,0 +1,22 @@
+<resources>
+    <style name="Theme.Hani" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="android:windowBackground">@color/dark_background</item>
+    </style>
+
+    <style name="Theme.Hani.NoActionBar" parent="Theme.Hani">
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="OverlayTextView" parent="Widget.Material3.TextView">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/overlay_text_bg</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+</resources>
