@@ -6,9 +6,6 @@ import com.hani.assistant.data.local.ConversationDao
 import com.hani.assistant.data.local.PreferenceDao
 import com.hani.assistant.data.remote.ChatApi
 import com.hani.assistant.repository.AppRepository
-import com.hani.assistant.repository.ChatRepository
-import com.hani.assistant.repository.ContactRepository
-import com.hani.assistant.repository.NotificationRepository
 import com.hani.assistant.services.ai.OpenAiChatService
 import com.hani.assistant.services.speech.TextToSpeechEngine
 import com.hani.assistant.services.wake.WakeWordEngine
@@ -94,13 +91,7 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideContactRepository(@ApplicationContext context: Context): ContactRepository {
-        return ContactRepository(context)
-    }
 
     @Provides
     @Singleton
-    fun provideNotificationRepository(@ApplicationContext context: Context): NotificationRepository {
-        return NotificationRepository(context)
-    }
 }
