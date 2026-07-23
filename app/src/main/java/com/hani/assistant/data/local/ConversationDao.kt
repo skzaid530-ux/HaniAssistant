@@ -1,17 +1,18 @@
 package com.hani.assistant.data.local
 
 import androidx.room.Dao
+import androidx.room.Insert
 import androidx.room.Query
-import androidx.room.Update
 
 @Dao
-interface PreferenceDao {
-    @Query("SELECT * FROM preferences LIMIT 1")
-    suspend fun getPreferences(): UserPreferenceEntity?
+interface ConversationDao {
 
-    @Update
-    suspend fun updatePreferences(preferences: UserPreferenceEntity)
+    @Insert
+    suspend fun insert(conversation: ConversationEntity)
 
-    @Query("UPDATE preferences SET userName = :name WHERE id = 1")
-    suspend fun updateUserName(name: String)
+    @Query("SELECT * FROM conversations ORDER BY timestamp DESC")
+    suspend fun getAll(): List<ConversationEntity>
+
+    @Query("DELETE FROM conversations")
+    suspend fun deleteAll()
 }
