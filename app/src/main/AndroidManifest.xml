@@ -61,7 +61,5 @@
             </intent-filter>
         </service>
 
-        <meta-data
-
     </application>
 </manifest>
