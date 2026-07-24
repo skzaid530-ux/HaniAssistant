@@ -3,6 +3,7 @@ package com.hani.assistant.utils
 import android.Manifest
 import android.app.Activity
 import android.content.Context
+import dagger.hilt.android.qualifiers.ApplicationContext
 import android.content.pm.PackageManager
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -11,7 +12,7 @@ import javax.inject.Singleton
 
 @Singleton
 class PermissionHelper @Inject constructor(
-    private val context: Context
+    @ApplicationContext private val context: Context
 ) {
     private val permissions = arrayOf(
         Manifest.permission.RECORD_AUDIO,
