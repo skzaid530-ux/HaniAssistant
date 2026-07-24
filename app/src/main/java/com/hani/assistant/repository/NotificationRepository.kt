@@ -1,5 +1,6 @@
 package com.hani.assistant.repository
 
+import dagger.hilt.android.qualifiers.ApplicationContext
 import android.content.Context
 import android.service.notification.NotificationListenerService
 import android.service.notification.StatusBarNotification
@@ -10,7 +11,7 @@ import javax.inject.Singleton
 
 @Singleton
 class NotificationRepository @Inject constructor(
-    private val context: Context
+    @ApplicationContext private val context: Context
 ) {
     private val _notifications = MutableStateFlow<List<StatusBarNotification>>(emptyList())
     val notifications: StateFlow<List<StatusBarNotification>> = _notifications
