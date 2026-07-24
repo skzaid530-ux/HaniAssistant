@@ -1,13 +1,12 @@
 package com.hani.assistant.services.overlay
 
-import androidx.lifecycle.ViewModel
-import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import javax.inject.Inject
+import javax.inject.Singleton
 
-@HiltViewModel
-class OverlayViewModel @Inject constructor() : ViewModel() {
+@Singleton
+class OverlayViewModel @Inject constructor()  {
     private val _state = MutableStateFlow(FloatingOverlayService.State.IDLE)
     val state: StateFlow<FloatingOverlayService.State> = _state
 
