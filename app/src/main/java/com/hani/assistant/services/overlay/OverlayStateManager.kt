@@ -6,7 +6,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class OverlayViewModel @Inject constructor()  {
+class OverlayStateManager @Inject constructor()  {
     private val _state = MutableStateFlow(FloatingOverlayService.State.IDLE)
     val state: StateFlow<FloatingOverlayService.State> = _state
 

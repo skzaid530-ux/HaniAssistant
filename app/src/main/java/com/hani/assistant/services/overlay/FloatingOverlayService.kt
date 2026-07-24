@@ -51,7 +51,7 @@ class FloatingOverlayService : Service() {
     private var stateUpdateJob: Job? = null
 
     @Inject
-    lateinit var overlayViewModel: OverlayViewModel
+    lateinit var overlayViewModel: OverlayStateManager
 
     override fun onCreate() {
         super.onCreate()

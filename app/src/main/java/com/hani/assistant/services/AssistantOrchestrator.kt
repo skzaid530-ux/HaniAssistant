@@ -4,7 +4,7 @@ import android.content.Context
 import com.hani.assistant.repository.AppRepository
 import com.hani.assistant.services.ai.OpenAiChatService
 import com.hani.assistant.services.overlay.FloatingOverlayService
-import com.hani.assistant.services.overlay.OverlayViewModel
+import com.hani.assistant.services.overlay.OverlayStateManager
 import com.hani.assistant.services.speech.SpeechToTextEngine
 import com.hani.assistant.services.speech.TextToSpeechEngine
 import com.hani.assistant.services.wake.WakeWordEngine
@@ -28,7 +28,7 @@ class AssistantOrchestrator @Inject constructor(
     private val textToSpeech: TextToSpeechEngine,
     private val openAiChatService: OpenAiChatService,
     private val appRepository: AppRepository,
-    private val overlayViewModel: OverlayViewModel,
+    private val overlayViewModel: OverlayStateManager,
     private val commandProcessor: CommandProcessor
 ) {
     private val scope = CoroutineScope(Dispatchers.Main + SupervisorJob())
